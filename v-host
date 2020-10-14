@@ -1,0 +1,610 @@
+# Virtual Hosts
+#
+# Required modules: mod_log_config
+
+# If you want to maintain multiple domains/hostnames on your
+# machine you can setup VirtualHost containers for them. Most configurations
+# use only name-based virtual hosts so the server doesn't need to worry about
+# IP addresses. This is indicated by the asterisks in the directives below.
+#
+# Please see the documentation at 
+# <URL:http://httpd.apache.org/docs/2.4/vhosts/>
+# for further details before you try to setup virtual hosts.
+#
+# You may use the command line option '-S' to verify your virtual host
+# configuration.
+
+#
+# Use name-based virtual hosting.
+#
+##NameVirtualHost *:80
+#
+# VirtualHost example:
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for all requests that do not
+# match a ##ServerName or ##ServerAlias in any <VirtualHost> block.
+#
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host.example.com
+    ##DocumentRoot "C:/xampp/htdocs/dummy-host.example.com"
+    ##ServerName dummy-host.example.com
+    ##ServerAlias www.dummy-host.example.com
+    ##ErrorLog "logs/dummy-host.example.com-error.log"
+    ##CustomLog "logs/dummy-host.example.com-access.log" common
+##</VirtualHost>
+
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    ##DocumentRoot "C:/xampp/htdocs/dummy-host2.example.com"
+    ##ServerName dummy-host2.example.com
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+##</VirtualHost>
+
+<VirtualHost passion-tehnical.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\passionjawelry\public
+    ServerName passion-tehnical.local
+	ServerAlias passion-tehnical.local
+
+    <Directory "C:\xampp\htdocs\passionjawelry\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost beangasm.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\beangasm
+    ServerName beangasm.local
+	ServerAlias beangasm.local
+
+    <Directory "C:\xampp\htdocs\beangasm">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost beangasm-new.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\git-beangasm-new\public
+    ServerName beangasm-new.local
+	ServerAlias beangasm-new.local
+
+    <Directory "C:\xampp\htdocs\git-beangasm-new\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+	
+	UnsetEnv PHPRC
+    <FilesMatch "\.php$">
+        php_flag engine off
+        SetHandler application/x-httpd-php_7_3_11
+        Action application/x-httpd-php_7_3_11 "/php_7_3_11/php-cgi.exe"
+    </FilesMatch>
+</VirtualHost>
+
+<VirtualHost hasmicro.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\hashmicro\public
+    ServerName hasmicro.local
+	ServerAlias hasmicro.local
+
+    <Directory "C:\xampp\htdocs\hashmicro\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+	
+	UnsetEnv PHPRC
+    <FilesMatch "\.php$">
+        php_flag engine off
+        SetHandler application/x-httpd-php_7_3_11
+        Action application/x-httpd-php_7_3_11 "/php_7_3_11/php-cgi.exe"
+    </FilesMatch>
+</VirtualHost>
+
+<VirtualHost food-order-system.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\E-commerce-Food-Order-System-Laravel-Project\public
+    ServerName veeht.local
+	ServerAlias veeht.local
+
+    <Directory "C:\xampp\htdocs\E-commerce-Food-Order-System-Laravel-Project\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost veeht.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\veeh-web\public
+    ServerName veeht.local
+	ServerAlias veeht.local
+
+    <Directory "C:\xampp\htdocs\veeh-web\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost veeh.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\veeh_floral_atelier_web\public
+    ServerName veeh.local
+	ServerAlias veeh.local
+
+    <Directory "C:\xampp\htdocs\veeh_floral_atelier_web\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost kamibijak.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\git-kamibijak-m\public
+    ServerName kamibijak.local
+	ServerAlias kamibijak.local
+
+    <Directory "C:\xampp\htdocs\git-kamibijak-m\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost veeh-lama.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\laravel\public
+    ServerName veeh-lama.local
+	ServerAlias veeh-lama.local
+
+    <Directory "C:\xampp\htdocs\laravel\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost destinationunknown.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\destinationunknown\public
+    ServerName destinationunknown.lc
+	ServerAlias destinationunknown.lc
+
+    <Directory "C:\xampp\htdocs\destinationunknown\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost kabaroto.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\kabaroto-master\public
+    ServerName kabaroto.lc
+	ServerAlias kabaroto.lc
+
+    <Directory "C:\xampp\htdocs\kabaroto-master\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+	
+	UnsetEnv PHPRC
+    <FilesMatch "\.php$">
+        php_flag engine off
+        SetHandler application/x-httpd-php_7_3_11
+        Action application/x-httpd-php_7_3_11 "/php_7_3_11/php-cgi.exe"
+    </FilesMatch>
+</VirtualHost>
+
+<VirtualHost side.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\side-web
+    ServerName side.lc
+	ServerAlias side.lc
+
+    <Directory "C:\xampp\htdocs\side-web">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost jhlgroup.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\jhlgroup\public
+    ServerName jhlgroup.lc
+	ServerAlias jhlgroup.lc
+
+    <Directory "C:\xampp\htdocs\jhlgroup\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost 7xpress.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\xpress-web
+    ServerName 7xpress.lc
+	ServerAlias 7xpress.lc
+
+    <Directory "C:\xampp\htdocs\xpress-web">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost acquaree.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\Acquaree-web\public
+    ServerName acquaree.lc
+	ServerAlias acquaree.lc
+
+    <Directory "C:\xampp\htdocs\Acquaree-web\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost acqua-spa.om>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\Acqua-spa-web\public
+    ServerName acqua-spa.om
+	ServerAlias acqua-spa.om
+
+    <Directory "C:\xampp\htdocs\Acqua-spa-web\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost lemerebeauty.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\Lemere-web\public
+    ServerName lemerebeauty.local
+	ServerAlias lemerebeauty.local
+
+    <Directory "C:\xampp\htdocs\Lemere-web\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost voyager.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\voyager\public
+    ServerName voyager.lc
+	ServerAlias voyager.lc
+
+    <Directory "C:\xampp\htdocs\voyager\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost testvoyager.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\testvoyager\public
+    ServerName testvoyager.lc
+	ServerAlias testvoyager.lc
+
+    <Directory "C:\xampp\htdocs\testvoyager\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost voyagersgitu.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\voyagersgitu\public
+    ServerName voyagersgitu.lc
+	ServerAlias voyagersgitu.lc
+
+    <Directory "C:\xampp\htdocs\voyagersgitu\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost inventory.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\inventory\public
+    ServerName inventory.lc
+	ServerAlias inventory.lc
+
+    <Directory "C:\xampp\htdocs\inventory\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost site58.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\site-58\public
+    ServerName site58.lc
+	ServerAlias site58.lc
+
+    <Directory "C:\xampp\htdocs\site-58\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost laravel-web.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\laravel-web
+    ServerName laravel-web.lc
+	ServerAlias laravel-web.lc
+
+    <Directory "C:\xampp\htdocs\laravel-web">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost laravel-dev.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\larav-dev\public
+    ServerName laravel-dev.lc
+	ServerAlias laravel-dev.lc
+
+    <Directory "C:\xampp\htdocs\larav-dev\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost laravel-angular.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\Laravel-AngularJS-CRUD\public
+    ServerName laravel-angular.lc
+	ServerAlias laravel-angular.lc
+
+    <Directory "C:\xampp\htdocs\Laravel-AngularJS-CRUD\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost laravel-form.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\laravel-ajax-contact-form\public
+    ServerName laravel-form.lc
+	ServerAlias laravel-form.lc
+
+    <Directory "C:\xampp\htdocs\laravel-ajax-contact-form\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost shopist.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\shopist
+    ServerName shopist.lc
+	ServerAlias shopist.lc
+
+    <Directory "C:\xampp\htdocs\shopist">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost infyom.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\infyom\public
+    ServerName infyom.lc
+	ServerAlias infyom.lc
+
+    <Directory "C:\xampp\htdocs\infyom\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost merahputih.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\merahputih-web
+    ServerName merahputih.lc
+	ServerAlias merahputih.lc
+
+    <Directory "C:\xampp\htdocs\merahputih-web">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost gustafo-web-api.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\gustafo-web-api
+    ServerName gustafo-web-api.lc
+	ServerAlias gustafo-web-api.lc
+
+    <Directory "C:\xampp\htdocs\gustafo-web-api">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost side.cms>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\git-cms-side
+    ServerName side.cms
+	ServerAlias side.cms
+
+    <Directory "C:\xampp\htdocs\git-cms-side">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost thejournal.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\git-the-journal\CI
+    ServerName thejournal.local
+	ServerAlias thejournal.local
+
+    <Directory "C:\xampp\htdocs\git-the-journal\CI">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost mangiamo.local>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\git-mangiamo-web\public
+    ServerName mangiamo.local
+	ServerAlias mangiamo.local
+
+    <Directory "C:\xampp\htdocs\git-mangiamo-web\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost side.aydi>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\git-frontend-side\public
+    ServerName side.aydi
+	ServerAlias side.aydi
+
+    <Directory "C:\xampp\htdocs\git-frontend-side\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost tehnical.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\tehnical-coding\public
+    ServerName tehnical.lc
+	ServerAlias tehnical.lc
+
+    <Directory "C:\xampp\htdocs\tehnical-coding\public">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost inventory-ci.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\inventory-ci
+    ServerName inventory-ci.lc
+	ServerAlias inventory-ci.lc
+
+    <Directory "C:\xampp\htdocs\inventory-ci">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost absensi-pegawai-master.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\absen-pegawai-master\absen-pegawai-master
+    ServerName absensi-pegawai-master.lc
+	ServerAlias absensi-pegawai-master.lc
+
+    <Directory "C:\xampp\htdocs\absen-pegawai-master\absen-pegawai-master">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+
+<VirtualHost app-penggajian.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\app_penggajian
+    ServerName app-penggajian.lc
+	ServerAlias app-penggajian.lc
+
+    <Directory "C:\xampp\htdocs\app_penggajian">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+<VirtualHost app-ujian-online.lc>
+    ServerAdmin webmaster@localhost
+    DocumentRoot C:\xampp\htdocs\aplikasi-ujian-online\cat
+    ServerName app-ujian-online.lc
+	ServerAlias app-ujian-online.lc
+
+    <Directory "C:\xampp\htdocs\aplikasi-ujian-online\cat">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
